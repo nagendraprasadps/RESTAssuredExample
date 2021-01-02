@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Practice Suite">
+
+  <test name="a">
+      <parameter name="page"  value="2"/>
+      <parameter name="per_page"  value="6"/>
+    <classes>
+       <class name="a1.RestAssured.REQRESTests">
+        <methods>
+         <include name="listUsersInaPage" />
+        
+        
+      </methods>
+       </class>
+    </classes>
+      
+  </test> <!-- Test --> 
+    <test name="a1">
+      <parameter  name="page"  value="1"/>
+      <parameter name="per_page"  value="3"/>
+     
+    <classes>
+       <class name="a1.RestAssured.REQRESTests">
+        <methods>
+         <include name="listUsersInaPage" />
+        
+        
+      </methods>
+       </class>
+    </classes>
+      
+  </test> <!-- Test --> 
+     <test name="ListSingleUser">
+      <parameter  name="id"  value="1"/>
+    	      
+    <classes>
+       <class name="a1.RestAssured.REQRESTests">
+        <methods>
+         <include name="listSingleUser" />
+        </methods>
+       </class>
+    </classes>
+      
+  </test> <!-- Test -->
+   <test name="userNotFound">
+      <parameter  name="id"  value="23"/>
+    	      
+    <classes>
+       <class name="a1.RestAssured.REQRESTests">
+        <methods>
+         <include name="userNotFound" />
+        </methods>
+       </class>
+    </classes>
+      
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Practice Suite]">
+  <parameter name="name" value="Nagendra"/>
+  <parameter name="job" value="leader"/>
+  <test name="userNotFound(failed)">
+    <parameter name="name" value="Nagendra"/>
+    <parameter name="job" value="leader"/>
+    <classes>
+      <class name="a1.RestAssured.REQRESTests">
+        <methods>
+          <include name="deleteUsers"/>
+        </methods>
+      </class> <!-- a1.RestAssured.REQRESTests -->
+    </classes>
+  </test> <!-- userNotFound(failed) -->
+</suite> <!-- Failed suite [Practice Suite] -->

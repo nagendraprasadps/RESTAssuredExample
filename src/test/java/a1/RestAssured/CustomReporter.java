@@ -1,0 +1,40 @@
+package a1.RestAssured;
+
+import java.util.List;
+import java.util.Map;
+
+import org.testng.IReporter;
+import org.testng.ISuite;
+import org.testng.ISuiteResult;
+import org.testng.ITestContext;
+import org.testng.xml.XmlSuite;
+
+public class CustomReporter implements IReporter{
+   public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites,
+      String outputDirectory) {
+      
+      //Iterating over each suite included in the test
+      for (ISuite suite : suites) {
+            
+         //Following code gets the suite name
+         String suiteName = suite.getName();
+            
+         //Getting the results for the said suite
+         Map<String, ISuiteResult> suiteResults = suite.getResults();
+         for (ISuiteResult sr : suiteResults.values()) {
+            ITestContext tc = sr.getTestContext();
+            System.out.println("Passed tests for suite '" + suiteName +
+               "' is:" + tc.getPassedTests().getAllResults().size());
+            System.out.println("Failed tests for suite '" + suiteName +
+               "' is:" + tc.getFailedTests().getAllResults().size());
+            System.out.println("Skipped tests for suite '" + suiteName +
+               "' is:" + tc.getSkippedTests().getAllResults().size());
+            float total=tc.getPassedTests().getAllResults().size()+tc.getFailedTests().getAllResults().size()+tc.getSkippedTests().getAllResults().size();
+            float passRate= (float) (tc.getPassedTests().getAllResults().size()/total * 100.0) ;
+            float runRate= (float) ((tc.getFailedTests().getAllResults().size()+tc.getPassedTests().getAllResults().size())/total * 100.0) ;
+            System.out.println("Pass Rate:" + Math.round(passRate) +"%");
+            System.out.println("Run Rate:" + Math.round(runRate) +"%");
+         }
+      }
+   }
+}

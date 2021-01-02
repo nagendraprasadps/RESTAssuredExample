@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Practice Suite">
+
+
+ 
+     <test name="userNotFound">
+      <parameter  name="name"  value="Nagendra"/>
+      <parameter  name="job"  value="leader"/>
+    	      
+    <classes>
+       <class name="a1.RestAssured.REQRESTests">
+        <methods>
+         <include name="deleteUsers" />
+        </methods>
+       </class>
+    </classes>
+      
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

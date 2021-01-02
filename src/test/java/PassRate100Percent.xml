@@ -1,0 +1,18 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<suite name = "Simple Reporter Suite">
+
+   <listeners>
+      <listener class-name = "a1.RestAssured.CustomReporter" />
+   </listeners>
+
+   <test name = "Simple Reporter test">
+     <parameter name="page"  value="2"/>
+      <parameter name="per_page"  value="6"/>
+      <parameter name="id"  value="1"/>
+      <parameter  name="name"  value="Nagendra"/>
+      <parameter  name="job"  value="leader"/>
+      <classes>
+         <class name = "a1.RestAssured.REQRESTests" />
+      </classes>
+   </test>
+</suite>
